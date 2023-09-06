@@ -42,7 +42,7 @@ function App() {
 					<Route path="/moviedetails" element={<MovieDetail />}></Route>
 					<Route path="/searchmovies" element={<Movie />}></Route>
 					<Route
-						path="/"
+						path="*"
 						element={
 							<div>
 								<Header howitworks={howitworks} movie={moviee}></Header>
