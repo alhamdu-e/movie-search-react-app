@@ -116,7 +116,6 @@ function Movie() {
 		<div className="movie-search">
 			<div className="serach-nav">
 				<div className="logo-cont logo-link">
-					<img src="./images/logo6.png" alt="logo" className="logo" />{" "}
 					<span>movieradar</span>
 				</div>
 				<div>
@@ -151,10 +150,6 @@ function Movie() {
 						<option value="10752">war</option>
 						<option value="10749">Romance</option>
 					</select>
-
-					<Link to={"/"} className="btn-logout">
-						home
-					</Link>
 				</div>
 			</div>
 			{displayPagination && (

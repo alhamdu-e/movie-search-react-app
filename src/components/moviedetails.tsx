@@ -83,7 +83,6 @@ function MovieDetail() {
 					className={`logo-cont logo-link  ${
 						selectedMovieId ? "" : "margin-bootom"
 					}`}>
-					<img src="./images/logo6.png" alt="logo" className="logo" />{" "}
 					<span>movieradar</span>
 				</div>
 				{selectedMovieId && (
