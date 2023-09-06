@@ -6,7 +6,7 @@ import { MovieProvider } from "./components/movecontext";
 import MovieDetail from "./components/moviedetails";
 
 import { useState, useEffect, useRef } from "react";
-import { HashRouter as Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 interface Movie {
 	id: Number;
@@ -37,36 +37,38 @@ function App() {
 
 	return (
 		<div>
-			<MovieProvider>
-				<Routes>
-					<Route path="/moviedetails" element={<MovieDetail />}></Route>
-					<Route path="/searchmovies" element={<Movie />}></Route>
-					<Route
-						path="/"
-						element={
-							<div>
-								<Header howitworks={howitworks} movie={moviee}></Header>
-								<div className="feature-container" ref={moviee}>
-									{feature
-										.filter((movie) => {
-											return movie.title.length < 29;
-										})
-										.slice(0, 15)
-										.map((movie) => (
-											<Feature
-												id={movie.id}
-												title={movie.title}
-												rating={movie.vote_average}
-												year={movie.release_date}
-												image={movie.poster_path}
-											/>
-										))}
+			<BrowserRouter>
+				<MovieProvider>
+					<Routes>
+						<Route path="/moviedetails" element={<MovieDetail />}></Route>
+						<Route path="/searchmovies" element={<Movie />}></Route>
+						<Route
+							path="/"
+							element={
+								<div>
+									<Header howitworks={howitworks} movie={moviee}></Header>
+									<div className="feature-container" ref={moviee}>
+										{feature
+											.filter((movie) => {
+												return movie.title.length < 29;
+											})
+											.slice(0, 15)
+											.map((movie) => (
+												<Feature
+													id={movie.id}
+													title={movie.title}
+													rating={movie.vote_average}
+													year={movie.release_date}
+													image={movie.poster_path}
+												/>
+											))}
+									</div>
+									<How howitworks={howitworks} />
 								</div>
-								<How howitworks={howitworks} />
-							</div>
-						}></Route>
-				</Routes>
-			</MovieProvider>
+							}></Route>
+					</Routes>
+				</MovieProvider>
+			</BrowserRouter>
 		</div>
 	);
 }
