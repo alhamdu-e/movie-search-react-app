@@ -19,8 +19,6 @@ interface Movie {
 }
 
 function App() {
-	const apikey = process.env.REACT_APP_API_KEY;
-
 	const howitworks = useRef<HTMLDivElement | null>(null);
 	const moviee = useRef<HTMLDivElement | null>(null);
 
@@ -45,7 +43,7 @@ function App() {
 				<MovieProvider>
 					<Routes>
 						<Route
-							path="/"
+							path="*"
 							element={
 								<div>
 									<Header howitworks={howitworks} movie={moviee}></Header>
@@ -72,7 +70,7 @@ function App() {
 						<Route path="/signup" element={<Signup />}></Route>
 						<Route path="/moviedetails" element={<MovieDetail />}></Route>
 						<Route path="/searchmovies" element={<Movie />}></Route>
-						<Route path="*" element={<Signup />}></Route>
+						<Route path="/" element={<Signup />}></Route>
 					</Routes>
 				</MovieProvider>
 			</BrowserRouter>
