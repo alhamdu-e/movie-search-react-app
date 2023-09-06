@@ -8,12 +8,11 @@ import "../css/login.css";
 function Login() {
 	return (
 		<div className="login">
-			<Link to={"/"}>
-				<div className="logo-cont logo-lin">
-					<img src="./images/logo6.png" alt="logo" className="logo" />{" "}
-					<span>movieradar</span>
-				</div>
-			</Link>
+			<div className="logo-cont logo-lin">
+				<img src="./images/logo6.png" alt="logo" className="logo" />{" "}
+				<span>movieradar</span>
+			</div>
+
 			<div className="form-cont">
 				<FaUserCircle className="icon" />
 				<form className="form">
