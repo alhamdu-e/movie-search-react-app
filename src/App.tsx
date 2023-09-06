@@ -42,8 +42,12 @@ function App() {
 			<BrowserRouter>
 				<MovieProvider>
 					<Routes>
+						<Route path="/login" element={<Login />}></Route>
+						<Route path="/signup" element={<Signup />}></Route>
+						<Route path="/moviedetails" element={<MovieDetail />}></Route>
+						<Route path="/searchmovies" element={<Movie />}></Route>
 						<Route
-							path="*"
+							path="/"
 							element={
 								<div>
 									<Header howitworks={howitworks} movie={moviee}></Header>
@@ -66,11 +70,7 @@ function App() {
 									<How howitworks={howitworks} />
 								</div>
 							}></Route>
-						<Route path="/login" element={<Login />}></Route>
-						<Route path="/signup" element={<Signup />}></Route>
-						<Route path="/moviedetails" element={<MovieDetail />}></Route>
-						<Route path="/searchmovies" element={<Movie />}></Route>
-						<Route path="/" element={<Signup />}></Route>
+						<Route path="*" element={<Signup />}></Route>
 					</Routes>
 				</MovieProvider>
 			</BrowserRouter>
