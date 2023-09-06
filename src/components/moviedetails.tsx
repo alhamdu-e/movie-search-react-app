@@ -33,8 +33,7 @@ function MovieDetail() {
 			fetch(
 				"https://api.themoviedb.org/3/movie/" +
 					selectedMovieId +
-					"/videos?api_key=" +
-					apikey
+					"/videos?api_key=3200199c2fcf2132eb0515137cf44f9d"
 			)
 				.then((response) => {
 					if (!response.ok) {
@@ -56,8 +55,7 @@ function MovieDetail() {
 			fetch(
 				"https://api.themoviedb.org/3/movie/" +
 					selectedMovieId +
-					"/credits?api_key=" +
-					apikey
+					"/credits?api_key=3200199c2fcf2132eb0515137cf44f9d"
 			)
 				.then((response) => response.json())
 				.then((data) => {

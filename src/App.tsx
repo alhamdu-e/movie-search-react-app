@@ -21,16 +21,14 @@ interface Movie {
 function App() {
 	const apikey = process.env.REACT_APP_API_KEY;
 
-	fetch("http://localhost:5000/m")
-		.then((response) => response.json())
-		.then((data) => console.log(data))
-		.catch((error) => console.error("Error:", error));
 	const howitworks = useRef<HTMLDivElement | null>(null);
 	const moviee = useRef<HTMLDivElement | null>(null);
 
 	const [feature, setFeature] = useState<Movie[]>([]);
 	useEffect(() => {
-		fetch("https://api.themoviedb.org/3/movie/popular?api_key=" + apikey)
+		fetch(
+			"https://api.themoviedb.org/3/movie/popular?api_key=3200199c2fcf2132eb0515137cf44f9d"
+		)
 			.then((response) => response.json())
 			.then((data) => {
 				const movies = data.results; // Assuming 'results' is the key containing the movie list
@@ -72,10 +70,9 @@ function App() {
 							}></Route>
 						<Route path="/login" element={<Login />}></Route>
 						<Route path="/signup" element={<Signup />}></Route>
-						<Route path="*" element={<Signup />}></Route>
-
 						<Route path="/moviedetails" element={<MovieDetail />}></Route>
 						<Route path="/searchmovies" element={<Movie />}></Route>
+						<Route path="*" element={<Signup />}></Route>
 					</Routes>
 				</MovieProvider>
 			</BrowserRouter>

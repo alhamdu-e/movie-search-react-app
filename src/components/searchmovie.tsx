@@ -7,7 +7,6 @@ import { BiSearchAlt2 } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { useMovieContext } from "./movecontext";
 import "../css/feature.css";
-const apikey = process.env.REACT_APP_API_KEY;
 
 function Movie() {
 	const [movieTitle, setmovieTitle] = useState("");
@@ -44,9 +43,7 @@ function Movie() {
 			}
 			if (!booll) {
 				fetch(
-					"https://api.themoviedb.org/3/discover/movie?api_key=" +
-						apikey +
-						"&with_genres=" +
+					"https://api.themoviedb.org/3/discover/movie?api_key=3200199c2fcf2132eb0515137cf44f9d&with_genres=" +
 						catValue +
 						"&page=" +
 						next
@@ -68,9 +65,7 @@ function Movie() {
 			}
 			if (!booll) {
 				fetch(
-					"https://api.themoviedb.org/3/discover/movie?api_key=" +
-						apikey +
-						"&with_genres=" +
+					"https://api.themoviedb.org/3/discover/movie?api_key=3200199c2fcf2132eb0515137cf44f9d&with_genres=" +
 						catValue +
 						"&page=" +
 						prev
@@ -87,9 +82,7 @@ function Movie() {
 		fetch(
 			"https://api.themoviedb.org/3/search/movie?query=" +
 				movieTitle +
-				"&api_key=" +
-				apikey +
-				"&page=" +
+				"&api_key=3200199c2fcf2132eb0515137cf44f9d&page=" +
 				page
 		)
 			.then((response) => response.json())
@@ -102,9 +95,7 @@ function Movie() {
 		console.log(catagories);
 		if (catagories !== "") {
 			fetch(
-				"https://api.themoviedb.org/3/discover/movie?api_key=" +
-					apikey +
-					"&with_genres=" +
+				"https://api.themoviedb.org/3/discover/movie?api_key=3200199c2fcf2132eb0515137cf44f9d&with_genres=" +
 					catagories +
 					"&page=" +
 					currentPages
